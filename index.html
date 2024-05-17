@@ -1,38 +1,62 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=320, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Agenda de Workshops</title>
     <link rel="stylesheet" href="styles.css">
-    <script type="text/javascript" src="./index.js" defer=""></script>
-    <link rel="stylesheet" href="./index.css">
-  </head>
-
-  <body>
+</head>
+<body>
     <div class="container">
-      <h1>Agenda de Workshops</h1>
-      <div id="workshop-cards">
-        <!-- Os cards de workshops serão gerados dinamicamente aqui -->
-      </div>
+        <div class="profile-container">
+            <h2>Perfil do Usuário</h2>
+            <p id="user-name"></p>
+            <p id="user-course"></p>
+            <button id="edit-profile-button">Editar Perfil</button>
+        </div>
+        <h1>Agenda de Workshops</h1>
+        <div id="workshop-cards">
+            <!-- Os cards de workshops serão gerados dinamicamente aqui -->
+        </div>
     </div>
 
-    <!-- Menu Flutuante -->
+    <!-- Modal de Edição de Perfil -->
+    <div id="profile-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-profile-modal">&times;</span>
+            <h2>Editar Perfil</h2>
+            <form id="edit-profile-form">
+                <label for="edit-name">Nome:</label>
+                <input type="text" id="edit-name" name="edit-name" required>
+                <label for="edit-email">Email:</label>
+                <input type="email" id="edit-email" name="edit-email" required>
+                <label for="edit-courses">Cursos:</label>
+                <div id="edit-courses">
+                    <input type="checkbox" id="edit-design" name="edit-course" value="Design">
+                    <label for="edit-design">Design</label>
+                    <input type="checkbox" id="edit-marketing" name="edit-course" value="Marketing">
+                    <label for="edit-marketing">Marketing</input>
+                    <input type="checkbox" id="edit-programacao" name="edit-course" value="Programação">
+                    <label for="edit-programacao">Programação</input>
+                </div>
+                <button type="submit">Salvar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Informações do Workshop -->
     <div id="modal" class="modal">
-      <div class="modal-content">
-        <span class="close">×</span>
-        <h2 id="modal-title"></h2>
-        <p id="modal-description"></p>
-        <p id="modal-teacher"></p>
-        <button id="subscribe-button">Inscrever-se</button>
-        <button id="unsubscribe-button" class="unsubscribe-button">Desinscrever-se</button>
-      </div>
+        <div class="modal-content">
+            <span class="close" id="close-workshop-modal">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+            <p id="modal-teacher"></p>
+            <button id="subscribe-button">Inscrever-se</button>
+            <button id="unsubscribe-button" class="unsubscribe-button">Desinscrever-se</button>
+        </div>
     </div>
 
+    <script src="init.js"></script> <!-- Inclusão do novo script -->
     <script src="scripts.js"></script>
-
-
-  </body>
-
+</body>
 </html>
