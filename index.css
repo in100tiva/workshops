@@ -1,0 +1,177 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#workshop-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 100%;
+    max-width: 300px;
+    position: relative;
+    cursor: pointer;
+}
+
+.card .tags {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.card .tag {
+    background-color: #eee;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+.subscribed-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: green;
+    display: none;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.unsubscribe-button {
+    background-color: #f44336;
+}
+
+.unsubscribe-button:hover {
+    background-color: #e53935;
+}
+
+/* Media Queries for Responsiveness */
+
+@media (max-width: 1440px) {
+    .container {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+}
+
+@media (max-width: 320px) {
+    .container {
+        padding: 10px;
+    }
+
+    .card {
+        padding: 10px;
+    }
+
+    button {
+        padding: 10px;
+    }
+}
+
+/* Media Queries for Orientation */
+
+@media (orientation: portrait) {
+    .container {
+        padding: 20px;
+    }
+    
+    #workshop-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (orientation: landscape) {
+    .container {
+        padding: 10px 5%;
+    }
+    
+    #workshop-cards {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}

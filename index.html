@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=320, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Agenda de Workshops</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="./index.js" defer=""></script>
+    <link rel="stylesheet" href="./index.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Agenda de Workshops</h1>
+      <div id="workshop-cards">
+        <!-- Os cards de workshops serão gerados dinamicamente aqui -->
+      </div>
+    </div>
+
+    <!-- Menu Flutuante -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close">×</span>
+        <h2 id="modal-title"></h2>
+        <p id="modal-description"></p>
+        <p id="modal-teacher"></p>
+        <button id="subscribe-button">Inscrever-se</button>
+        <button id="unsubscribe-button" class="unsubscribe-button">Desinscrever-se</button>
+      </div>
+    </div>
+
+    <script src="scripts.js"></script>
+
+
+  </body>
+
+</html>
