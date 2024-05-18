@@ -51,7 +51,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const editEmail = document.getElementById('edit-email');
     const editCourses = document.querySelectorAll('input[name="edit-course"]');
 
-    workshops.forEach((workshop, index) => {
+    // Filtra workshops com base nos cursos do usuário
+    const filteredWorkshops = workshops.filter(workshop => 
+        workshop.tags.some(tag => currentUser.courses.includes(tag))
+    );
+
+    filteredWorkshops.forEach((workshop, index) => {
         const card = document.createElement('div');
         card.classList.add('card');
         card.innerHTML = `
@@ -100,6 +105,8 @@ document.addEventListener('DOMContentLoaded', () => {
         sessionStorage.setItem('currentUser', JSON.stringify(currentUser));
         updateUserProfile();
         closeProfileModal();
+        // Recarregar a página para aplicar os filtros
+        location.reload();
     });
 
     function openModal(workshop, index) {
